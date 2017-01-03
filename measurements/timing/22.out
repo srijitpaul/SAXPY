@@ -1,12 +1,12 @@
 Sender: LSF System <ibm003@juronc06>
-Subject: Job 8775: <./../bin/saxpy_many 22 10> in cluster <cluster_lsf_hbp> Done
+Subject: Job 8807: <./../bin/saxpy_many 22 10> in cluster <cluster_lsf_hbp> Done
 
 Job <./../bin/saxpy_many 22 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
 Job was executed on host(s) <juronc06>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
 </gpfs/homeb/zam/padc005> was used as the home directory.
 </gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
-Started at Tue Jan  3 07:10:07 2017
-Results reported on Tue Jan  3 07:10:12 2017
+Started at Tue Jan  3 09:39:23 2017
+Results reported on Tue Jan  3 09:39:27 2017
 
 Your job looked like:
 
@@ -19,8 +19,8 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   2.75 sec.
-    Max Memory :                                 341 MB
+    CPU time :                                   1.82 sec.
+    Max Memory :                                 336 MB
     Average Memory :                             47.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
@@ -28,7 +28,7 @@ Resource usage summary:
     Max Processes :                              3
     Max Threads :                                6
     Run time :                                   3 sec.
-    Turnaround time :                            6 sec.
+    Turnaround time :                            4 sec.
 
 The output (if any) follows:
 
@@ -43,9 +43,9 @@ Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
-Average time of execution: 0.096202
-Maximum time of execution: 0.100320
-Mininum time of execution: 0.094784
-Average Bandwidth: 523.314614
-Maximum Bandwidth: 531.014176
-Mininum Bandwidth: 501.711008
+Average time of execution: 0.104090
+Maximum time of execution: 0.143648
+Mininum time of execution: 0.095008
+Average Bandwidth: 494.058234
+Maximum Bandwidth: 529.762208
+Mininum Bandwidth: 350.381824

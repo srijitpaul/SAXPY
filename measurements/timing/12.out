@@ -1,12 +1,12 @@
-Sender: LSF System <ibm003@juronc14>
-Subject: Job 8755: <./../bin/saxpy_many 12 10> in cluster <cluster_lsf_hbp> Done
+Sender: LSF System <ibm003@juronc03>
+Subject: Job 8787: <./../bin/saxpy_many 12 10> in cluster <cluster_lsf_hbp> Done
 
 Job <./../bin/saxpy_many 12 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
-Job was executed on host(s) <juronc14>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc03>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
 </gpfs/homeb/zam/padc005> was used as the home directory.
 </gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
-Started at Tue Jan  3 07:10:07 2017
-Results reported on Tue Jan  3 07:10:11 2017
+Started at Tue Jan  3 09:39:24 2017
+Results reported on Tue Jan  3 09:39:26 2017
 
 Your job looked like:
 
@@ -20,15 +20,15 @@ Successfully completed.
 Resource usage summary:
 
     CPU time :                                   0.15 sec.
-    Max Memory :                                 50 MB
-    Average Memory :                             11.00 MB
+    Max Memory :                                 52 MB
+    Average Memory :                             14.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              3
     Max Threads :                                6
     Run time :                                   2 sec.
-    Turnaround time :                            5 sec.
+    Turnaround time :                            3 sec.
 
 The output (if any) follows:
 
@@ -43,9 +43,9 @@ Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
-Average time of execution: 0.018288
-Maximum time of execution: 0.122656
-Mininum time of execution: 0.003616
-Average Bandwidth: 9.012172
-Maximum Bandwidth: 13.592920
-Mininum Bandwidth: 0.400730
+Average time of execution: 0.011216
+Maximum time of execution: 0.034528
+Mininum time of execution: 0.008064
+Average Bandwidth: 5.289716
+Maximum Bandwidth: 6.095238
+Mininum Bandwidth: 1.423540

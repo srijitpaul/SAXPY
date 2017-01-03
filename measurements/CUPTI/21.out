@@ -1,12 +1,12 @@
 Sender: LSF System <ibm003@juronc06>
-Subject: Job 8774: <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 21 10> in cluster <cluster_lsf_hbp> Done
+Subject: Job 8806: <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 21 10> in cluster <cluster_lsf_hbp> Done
 
 Job <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 21 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
 Job was executed on host(s) <juronc06>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
 </gpfs/homeb/zam/padc005> was used as the home directory.
 </gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
-Started at Tue Jan  3 07:10:07 2017
-Results reported on Tue Jan  3 07:10:14 2017
+Started at Tue Jan  3 09:39:23 2017
+Results reported on Tue Jan  3 09:39:29 2017
 
 Your job looked like:
 
@@ -19,22 +19,22 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   2.60 sec.
-    Max Memory :                                 231 MB
-    Average Memory :                             23.00 MB
+    CPU time :                                   2.09 sec.
+    Max Memory :                                 226 MB
+    Average Memory :                             21.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                13
     Run time :                                   6 sec.
-    Turnaround time :                            8 sec.
+    Turnaround time :                            6 sec.
 
 The output (if any) follows:
 
-==156381== NVPROF is profiling process 156381, command: ./../bin/saxpy_many 21 10
-==156381== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==156381== Profiling application: ./../bin/saxpy_many 21 10
+==33699== NVPROF is profiling process 33699, command: ./../bin/saxpy_many 21 10
+==33699== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==33699== Profiling application: ./../bin/saxpy_many 21 10
 N = 2097152
 Max error: 0.000000
 Max error: 0.000000
@@ -46,21 +46,21 @@ Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
 Max error: 0.000000
-Average time of execution: 330.272355
-Maximum time of execution: 869.742676
-Mininum time of execution: 86.456032
-Average Bandwidth: 0.116717
-Maximum Bandwidth: 0.291082
-Mininum Bandwidth: 0.028935
-==156381== Profiling result:
-==156381== Metric result:
+Average time of execution: 317.711944
+Maximum time of execution: 678.599854
+Mininum time of execution: 96.402016
+Average Bandwidth: 0.105471
+Maximum Bandwidth: 0.261051
+Mininum Bandwidth: 0.037085
+==33699== Profiling result:
+==33699== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla P100-SXM2-16GB (0)"
     Kernel: saxpy(int, float, float*, float*)
-         10                        achieved_occupancy                        Achieved Occupancy    0.873076    0.878109    0.875312
-         10                      dram_read_throughput             Device Memory Read Throughput  317.77GB/s  324.21GB/s  320.26GB/s
-         10                          dram_utilization                 Device Memory Utilization    High (7)    High (8)    High (7)
-         10                     dram_write_throughput            Device Memory Write Throughput  145.58GB/s  168.69GB/s  156.81GB/s
-         10                        l2_read_throughput                     L2 Throughput (Reads)  317.93GB/s  324.33GB/s  320.40GB/s
-         10                       l2_write_throughput                    L2 Throughput (Writes)  158.89GB/s  187.98GB/s  162.82GB/s
-         10                                issued_ipc                                Issued IPC    0.352314    0.361523    0.355838
+         10                        achieved_occupancy                        Achieved Occupancy    0.865958    0.877261    0.871293
+         10                      dram_read_throughput             Device Memory Read Throughput  318.70GB/s  404.05GB/s  333.62GB/s
+         10                          dram_utilization                 Device Memory Utilization    High (7)    Max (10)    High (7)
+         10                     dram_write_throughput            Device Memory Write Throughput  128.61GB/s  304.71GB/s  162.87GB/s
+         10                        l2_read_throughput                     L2 Throughput (Reads)  318.83GB/s  562.47GB/s  348.66GB/s
+         10                       l2_write_throughput                    L2 Throughput (Writes)  159.34GB/s  170.38GB/s  162.20GB/s
+         10                                issued_ipc                                Issued IPC    0.357608    0.391727    0.368161
