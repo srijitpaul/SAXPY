@@ -14,12 +14,41 @@ __global__ void saxpy(int n, float a, float *x, float *y)
 	}
 }
 
-int main()
+double min(double* array, int size){
+    // returns the minimum value of array
+    double val = array[0];
+    for (int i = 1; i < size; ++i){
+        val = val <= array[i] ? val : array[i];
+    }
+    return val;
+}
+
+double max(double* array, int size){
+    // returns the maximum value of array
+    double val = array[0];
+    for (int i = 1; i < size; ++i){
+        val = val >= array[i] ? val : array[i];
+    }
+    return val;
+}
+
+double mean(double* array, int size) {
+    double sum=0;
+    for(int i=0; i<size; i++)
+        sum+=array[i];
+    return((double)sum/size);
+}
+
+int main(int argc, char * argv[])
 {
-	int N = 1<<27;
+	int arrlength= atoi(argv[1]);
+	int N = 1<<arrlength;
+	int nruns = atoi(argv[2]);
 	int size = N*sizeof(float);
 	printf("N = %d\n",N);
-
+	double ntime[nruns],nbandwidth[nruns];
+	for(int count = 0; count < nruns; count ++)
+	{
 	// Create CUDA events for timing purposes
 	cudaEvent_t start, stop;
 	cudaEventCreate(&start);
@@ -63,6 +92,14 @@ int main()
 		maxError = max(maxError, abs(y[i]-4.0f));
 	}
 	printf("Max error: %f\n", maxError);
-	printf("Succesfully performed SAXPY on %d elements in %f milliseconds.\n", N, milliseconds);
-	printf("Effective Bandwidth (GB/s): %f\n", N*4*3/milliseconds/1e6);
+	ntime[count] = milliseconds;
+	nbandwidth[count] = N*4*3/milliseconds/1e6;
+	}
+	printf("Average time of execution: %f\n", mean(ntime,nruns));
+	printf("Maximum time of execution: %f\n", max(ntime,nruns));
+	printf("Mininum time of execution: %f\n", min(ntime,nruns));
+	printf("Average Bandwidth: %f\n", mean(nbandwidth,nruns));
+	printf("Maximum Bandwidth: %f\n", max(nbandwidth,nruns));
+	printf("Mininum Bandwidth: %f\n", min(nbandwidth,nruns));
+
 }

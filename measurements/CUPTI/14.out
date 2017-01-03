@@ -1,0 +1,66 @@
+Sender: LSF System <ibm003@juronc14>
+Subject: Job 8760: <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 14 10> in cluster <cluster_lsf_hbp> Done
+
+Job <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 14 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc14>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
+Started at Tue Jan  3 07:10:07 2017
+Results reported on Tue Jan  3 07:10:24 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_many 14 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.48 sec.
+    Max Memory :                                 71 MB
+    Average Memory :                             45.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                13
+    Run time :                                   15 sec.
+    Turnaround time :                            18 sec.
+
+The output (if any) follows:
+
+==118205== NVPROF is profiling process 118205, command: ./../bin/saxpy_many 14 10
+==118205== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==118205== Profiling application: ./../bin/saxpy_many 14 10
+N = 16384
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Max error: 0.000000
+Average time of execution: 1181.599750
+Maximum time of execution: 1478.261841
+Mininum time of execution: 1015.214661
+Average Bandwidth: 0.000168
+Maximum Bandwidth: 0.000194
+Mininum Bandwidth: 0.000133
+==118205== Profiling result:
+==118205== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla P100-SXM2-16GB (0)"
+    Kernel: saxpy(int, float, float*, float*)
+         10                        achieved_occupancy                        Achieved Occupancy    0.134187    0.137717    0.136511
+         10                      dram_read_throughput             Device Memory Read Throughput  34.841GB/s  47.693GB/s  41.365GB/s
+         10                          dram_utilization                 Device Memory Utilization     Low (1)     Low (1)     Low (1)
+         10                     dram_write_throughput            Device Memory Write Throughput  3.7355GB/s  12.058GB/s  7.3779GB/s
+         10                        l2_read_throughput                     L2 Throughput (Reads)  40.051GB/s  50.682GB/s  44.561GB/s
+         10                       l2_write_throughput                    L2 Throughput (Writes)  18.726GB/s  23.697GB/s  20.854GB/s
+         10                                issued_ipc                                Issued IPC    0.087605    0.116834    0.099406
