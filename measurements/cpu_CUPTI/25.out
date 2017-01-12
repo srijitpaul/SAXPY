@@ -1,0 +1,104 @@
+==44349== NVPROF is profiling process 44349, command: ./../bin/saxpy_cputime 25 10
+==44349== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==44349== Profiling application: ./../bin/saxpy_cputime 25 10
+N = 33554432
+==44349== Profiling result:
+==44349== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla P100-SXM2-16GB (0)"
+    Kernel: saxpy(int, float, float*, float*)
+         10                        achieved_occupancy                        Achieved Occupancy    0.890036    0.890699    0.890367
+         10                      dram_read_throughput             Device Memory Read Throughput  339.80GB/s  339.91GB/s  339.84GB/s
+         10                          dram_utilization                 Device Memory Utilization    High (8)    High (8)    High (8)
+         10                     dram_write_throughput            Device Memory Write Throughput  169.20GB/s  169.70GB/s  169.52GB/s
+         10                        l2_read_throughput                     L2 Throughput (Reads)  339.80GB/s  339.92GB/s  339.85GB/s
+         10                       l2_write_throughput                    L2 Throughput (Writes)  169.90GB/s  169.96GB/s  169.92GB/s
+         10                                issued_ipc                                Issued IPC    0.363293    0.363914    0.363421
+
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc14>
+Subject: Job 10005: <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10> in cluster <cluster_lsf_hbp> Done
+
+Job <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc14>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
+Started at Tue Jan 10 18:41:00 2017
+Results reported on Tue Jan 10 18:41:13 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.24 sec.
+    Max Memory :                                 324 MB
+    Average Memory :                             174.50 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                13
+    Run time :                                   12 sec.
+    Turnaround time :                            13 sec.
+
+The output (if any) is above this job summary.
+
+==8004== NVPROF is profiling process 8004, command: ./../bin/saxpy_cputime 25 10
+==8004== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==8004== Profiling application: ./../bin/saxpy_cputime 25 10
+N = 33554432
+==8004== Profiling result:
+==8004== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla P100-SXM2-16GB (0)"
+    Kernel: saxpy(int, float, float*, float*)
+         10                        achieved_occupancy                        Achieved Occupancy    0.889227    0.890308    0.889825
+         10                      dram_read_throughput             Device Memory Read Throughput  340.18GB/s  340.56GB/s  340.38GB/s
+         10                          dram_utilization                 Device Memory Utilization    High (8)    High (8)    High (8)
+         10                     dram_write_throughput            Device Memory Write Throughput  169.30GB/s  170.08GB/s  169.79GB/s
+         10                        l2_read_throughput                     L2 Throughput (Reads)  340.19GB/s  340.56GB/s  340.39GB/s
+         10                       l2_write_throughput                    L2 Throughput (Writes)  170.08GB/s  170.28GB/s  170.19GB/s
+         10                                issued_ipc                                Issued IPC    0.362247    0.362824    0.362584
+
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc10>
+Subject: Job 10038: <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10> in cluster <cluster_lsf_hbp> Done
+
+Job <nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc10>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
+Started at Tue Jan 10 18:45:49 2017
+Results reported on Tue Jan 10 18:45:58 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+nvprof --metrics achieved_occupancy,dram_read_throughput,dram_utilization,dram_write_throughput,l2_read_throughput,l2_write_throughput,issued_ipc ./../bin/saxpy_cputime 25 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.32 sec.
+    Max Memory :                                 324 MB
+    Average Memory :                             24.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                13
+    Run time :                                   10 sec.
+    Turnaround time :                            10 sec.
+
+The output (if any) is above this job summary.
+
