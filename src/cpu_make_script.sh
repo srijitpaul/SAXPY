@@ -1,7 +1,7 @@
 #!/bin/bash
 
 END=25
-NEVAL=10
+NEVAL=50
 #Make Bandwidth and execution time measurements
 for i in $(seq 10 $END); 
 	do
