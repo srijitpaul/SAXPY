@@ -33,7 +33,6 @@ int main(int argc, char * argv[])
     int nruns = atoi(argv[2]);
     int size = N*sizeof(float);
     printf("N = %d\n",N);
-    double ntime[nruns],nbandwidth[nruns];
     char *output_file;
     output_file = new char[1024];
     output_file = argv[3];
@@ -48,6 +47,8 @@ int main(int argc, char * argv[])
     x = (float *)malloc(size);
     y = (float *)malloc(size);
 
+
+    double wall_timestart = get_wall_time();
     // Allocate device memory
     cudaMalloc(&d_x, size);
     cudaMalloc(&d_y, size);
@@ -57,7 +58,7 @@ int main(int argc, char * argv[])
         y[i] = 2.0f;
     }
 
-    double wall_timestart = get_wall_time();
+
     for(int count = 0; count < nruns; count ++){
         cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
         cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
