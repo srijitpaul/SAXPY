@@ -36,7 +36,7 @@ int main(int argc, char * argv[])
 	double ntime[nruns],nbandwidth[nruns];
 	char *output_file;
 	output_file = new char[1024];
-	sprintf(output_file,"/gpfs/homeb/zam/padc005/test/saxpy/SAXPY/measurements/cpu_timings/%.2d.dat",arrlength);
+  	output_file = argv[3];
 	ofstream outfile(output_file,ios::out);
 	//create stop timers
 	double wall_timestop[nruns];
@@ -57,17 +57,16 @@ int main(int argc, char * argv[])
 		y[i] = 2.0f;
 	}
 
+	double wall_timestart = get_wall_time();
+	for(int count = 0; count < nruns; count ++){
 	cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
 	cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
 
 	// Perform SAXPY on 1M elements
-	double wall_timestart = get_wall_time();
-         for(int count = 0; count < nruns; count ++){
-		saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
-		wall_timestop[count] = get_wall_time();
-	}
+	saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
 	cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
-
+	wall_timestop[count] = get_wall_time();
+	}
 	double seconds[nruns];
 		
 	for(int i = 0; i < nruns; i++){
