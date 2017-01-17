@@ -50,16 +50,18 @@ int main(int argc, char * argv[])
 
     double wall_timestart = get_wall_time();
     // Allocate device memory
-    cudaMalloc(&d_x, size);
-    cudaMalloc(&d_y, size);
-
-    for (int i = 0; i < N; i++){
-        x[i] = 1.0f;
-        y[i] = 2.0f;
-    }
-
-
     for(int count = 0; count < nruns; count ++){
+
+    	cudaMalloc(&d_x, size);
+    	cudaMalloc(&d_y, size);
+
+    	for (int i = 0; i < N; i++){
+        	x[i] = 1.0f;
+        	y[i] = 2.0f;
+    	}
+
+
+   
         cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
         cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
 
