@@ -34,7 +34,7 @@ int main(int argc, char * argv[])
     int size = N*sizeof(float);
  
     //create stop timers
-    double wall_timestop;
+    double wall_timestop_1, wall_timestop_2, wall_timestop_3;
 
     float *x, *y;		// Host vectors
     float *d_x, *d_y;	// Device vectors
@@ -56,7 +56,7 @@ int main(int argc, char * argv[])
         y[i] = 2.0f;
     }
     
-    double wall_timestart = get_wall_time();
+    double wall_timestart_1 = get_wall_time();
 
     cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
     cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
@@ -68,13 +68,53 @@ int main(int argc, char * argv[])
     }
         
     cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
-    wall_timestop = get_wall_time();
+    wall_timestop_1 = get_wall_time();
 
-    double seconds;
+    double seconds_1;
 
 
-    seconds = wall_timestop - wall_timestart;
+    seconds_1 = wall_timestop_1 - wall_timestart_1;
 
-    cout<<nruns<<"\t\t"<<seconds<<endl;
+    double wall_timestart_2 = get_wall_time();
+
+    cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
+    
+    for(int count = 0; count < nruns; count ++){
+
+        // Perform SAXPY on 1M elements
+        saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
+    }
+        
+    cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
+    wall_timestop_2 = get_wall_time();
+
+    double seconds_2;
+
+
+    seconds_2 = wall_timestop_2 - wall_timestart_2;
+
+    double wall_timestart_3 = get_wall_time();
+
+    cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
+    
+    for(int count = 0; count < nruns; count ++){
+
+        // Perform SAXPY on 1M elements
+        saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
+    }
+        
+    cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
+    wall_timestop_3 = get_wall_time();
+
+    double seconds_3;
+
+
+    seconds_3 = wall_timestop_3 - wall_timestart_3;
+
+    double mean_seconds = (seconds_1 + seconds_2 + seconds_3)/3;
+
+    cout<<nruns<<"\t\t"<<mean_seconds<<"\t\t"<<sqrt((pow((seconds_1 - mean_seconds),2) + pow((seconds_2 - mean_seconds),2) + pow((seconds_3 - mean_seconds),2))/3)<<endl;
 
 }
