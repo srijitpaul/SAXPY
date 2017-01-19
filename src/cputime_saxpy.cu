@@ -26,15 +26,25 @@ __global__ void saxpy(int n, float a, float *x, float *y)
     }
 }
 
+
+double min(double* array, int size){
+    // returns the minimum value of array
+    double val = array[0];
+    for (int i = 1; i < size; ++i){
+        val = val <= array[i] ? val : array[i];
+    }
+    return val;
+}
+
 int main(int argc, char * argv[])
 {
     int arrlength= atoi(argv[1]);
     int N = 1<<arrlength;
     int nruns = atoi(argv[2]);
+    int neval = atoi(argv[3]);
     int size = N*sizeof(float);
+    double seconds[neval];
  
-    //create stop timers
-    double wall_timestop_1, wall_timestop_2, wall_timestop_3;
 
     float *x, *y;		// Host vectors
     float *d_x, *d_y;	// Device vectors
@@ -56,65 +66,55 @@ int main(int argc, char * argv[])
         y[i] = 2.0f;
     }
     
-    double wall_timestart_1 = get_wall_time();
 
     cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
     cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
     
-    for(int count = 0; count < nruns; count ++){
 
-        // Perform SAXPY on 1M elements
-        saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
-    }
+    // Perform SAXPY on 1M elements
+    saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
         
     cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
-    wall_timestop_1 = get_wall_time();
 
-    double seconds_1;
+    cudaFree(d_x);
+    cudaFree(d_y);
 
 
-    seconds_1 = wall_timestop_1 - wall_timestart_1;
+    for(int run = 0; run < neval; run++)
+    {
 
-    double wall_timestart_2 = get_wall_time();
+    	// Allocate device memory
+   
 
-    cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
+    	cudaMalloc(&d_x, size);
+    	cudaMalloc(&d_y, size);
+
+	
+
+    	double wall_timestart = get_wall_time();
+
+    	cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
+    	cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
     
-    for(int count = 0; count < nruns; count ++){
+    	for(int count = 0; count < nruns; count ++){
 
-        // Perform SAXPY on 1M elements
-        saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
-    }
+        	// Perform SAXPY on 1M elements
+        	saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
+    	}
         
-    cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
-    wall_timestop_2 = get_wall_time();
+    	cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
+    	double wall_timestop = get_wall_time();
 
-    double seconds_2;
+    	cudaFree(d_x);
+    	cudaFree(d_y);
 
 
-    seconds_2 = wall_timestop_2 - wall_timestart_2;
+    	seconds[run] = wall_timestop - wall_timestart;
 
-    double wall_timestart_3 = get_wall_time();
 
-    cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
+    }
+    cout<<nruns<<"\t\t"<<min(seconds,neval)<<endl;
+ 
     
-    for(int count = 0; count < nruns; count ++){
-
-        // Perform SAXPY on 1M elements
-        saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
-    }
-        
-    cudaMemcpy(y, d_y, size, cudaMemcpyDeviceToHost);
-    wall_timestop_3 = get_wall_time();
-
-    double seconds_3;
-
-
-    seconds_3 = wall_timestop_3 - wall_timestart_3;
-
-    double mean_seconds = (seconds_1 + seconds_2 + seconds_3)/3;
-
-    cout<<nruns<<"\t\t"<<mean_seconds<<"\t\t"<<sqrt((pow((seconds_1 - mean_seconds),2) + pow((seconds_2 - mean_seconds),2) + pow((seconds_3 - mean_seconds),2))/3)<<endl;
 
 }
