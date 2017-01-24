@@ -11,7 +11,7 @@ mkdir -p ../measurements/cpu_CUPTI
 MAX_ARRAY_SIZE=25
 MAX_RUNS=100
 NEVAL=50
-INCREMENT=5
+INCREMENT=10
 START_ARRAY_SIZE=10
 START_RUN=20
 #Make Bandwidth and execution time measurements
