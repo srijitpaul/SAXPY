@@ -41,13 +41,13 @@ double mean(double* array, int size) {
 
 int main(int argc, char * argv[])
 {
-	int arrlength= atoi(argv[1]);
-	int N = 1<<arrlength;
-	int nruns = atoi(argv[2]);
-	int size = N*sizeof(float);
+	unsigned long int arrlength= atoi(argv[1]);
+	unsigned long int N = 1<<arrlength;
+	unsigned long int nruns = atoi(argv[2]);
+	size_t size = N*sizeof(float);
 	printf("N = %d\n",N);
 	double ntime[nruns],nbandwidth[nruns];
-	for(int count = 0; count < nruns; count ++){
+	for(unsigned long int count = 0; count < nruns; count ++){
 		// Create CUDA events for timing purposes
 		cudaEvent_t start, stop;
 		cudaEventCreate(&start);
@@ -64,7 +64,7 @@ int main(int argc, char * argv[])
 		cudaMalloc(&d_x, size);
 		cudaMalloc(&d_y, size);
 
-		for (int i = 0; i < N; i++){
+		for (unsigned long int i = 0; i < N; i++){
 			x[i] = 1.0f;
 			y[i] = 2.0f;
 		}
@@ -85,12 +85,16 @@ int main(int argc, char * argv[])
 		cudaEventElapsedTime(&milliseconds, start, stop);
 
 		float maxError = 0.0f;
-		for (int i = 0; i < N; i++){
+		for (unsigned long int i = 0; i < N; i++){
 			maxError = max(maxError, abs(y[i]-4.0f));
 		}
 		printf("Max error: %f\n", maxError);
 		ntime[count] = milliseconds;
 		nbandwidth[count] = N*4*3/milliseconds/1e6;
+	        cudaFree(d_x);
+		cudaFree(d_y);
+		free(x);
+		free(y);	
 	}
 	printf("Average time of execution: %f\n", mean(ntime,nruns));
 	printf("Maximum time of execution: %f\n", max(ntime,nruns));

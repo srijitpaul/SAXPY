@@ -38,11 +38,11 @@ double min(double* array, int size){
 
 int main(int argc, char * argv[])
 {
-    int arrlength= atoi(argv[1]);
-    int N = 1<<arrlength;
-    int nruns = atoi(argv[2]);
-    int neval = atoi(argv[3]);
-    int size = N*sizeof(float);
+    unsigned long int arrlength= atoi(argv[1]);
+    unsigned long int N = 1<<arrlength;
+    unsigned long int nruns = atoi(argv[2]);
+    unsigned long int neval = atoi(argv[3]);
+    size_t size = N*sizeof(float);
     double seconds[neval];
  
 
@@ -61,7 +61,7 @@ int main(int argc, char * argv[])
     cudaMalloc(&d_x, size);
     cudaMalloc(&d_y, size);
 
-    for (int i = 0; i < N; i++){
+    for (unsigned long int i = 0; i < N; i++){
         x[i] = 1.0f;
         y[i] = 2.0f;
     }
@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
     cudaFree(d_y);
 
 
-    for(int run = 0; run < neval; run++)
+    for(unsigned long int run = 0; run < neval; run++)
     {
 
     	// Allocate device memory
@@ -96,7 +96,7 @@ int main(int argc, char * argv[])
     	cudaMemcpy(d_x, x, size, cudaMemcpyHostToDevice);
     	cudaMemcpy(d_y, y, size, cudaMemcpyHostToDevice);
     
-    	for(int count = 0; count < nruns; count ++){
+    	for(unsigned long int count = 0; count < nruns; count ++){
 
         	// Perform SAXPY on 1M elements
         	saxpy<<<(N+255)/256, 256>>>(N, 2.0, d_x, d_y);
@@ -113,6 +113,9 @@ int main(int argc, char * argv[])
 
 
     }
+
+    free(x);
+    free(y);
     cout<<nruns<<"\t\t"<<min(seconds,neval)<<endl;
  
     
