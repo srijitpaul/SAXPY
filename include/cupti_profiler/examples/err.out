@@ -1,0 +1,6 @@
+./saxpy: error while loading shared libraries: libcupti.so.8.0: cannot open shared object file: No such file or directory
+../include/cupti_profiler.h:366: error: function cuptiEventGetIdFromName(m_device, m_event_names[i].c_str(), &event_ids[i]) failed with error CUPTI_ERROR_INVALID_EVENT_NAME.
+../include/cupti_profiler.h:366: error: function cuptiEventGetIdFromName(m_device, m_event_names[i].c_str(), &event_ids[i]) failed with error CUPTI_ERROR_INVALID_EVENT_NAME.
+../include/cupti_profiler.h:366: error: function cuptiEventGetIdFromName(m_device, m_event_names[i].c_str(), &event_ids[i]) failed with error CUPTI_ERROR_INVALID_EVENT_NAME.
+../include/cupti_profiler.h:366: error: function cuptiEventGetIdFromName(m_device, m_event_names[i].c_str(), &event_ids[i]) failed with error CUPTI_ERROR_INVALID_EVENT_NAME.
+../include/cupti_profiler.h:360: error: function cuptiMetricGetIdFromName(m_device, m_metric_names[i].c_str(), &metric_ids[i]) failed with error CUPTI_ERROR_INVALID_METRIC_NAME.

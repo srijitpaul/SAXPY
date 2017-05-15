@@ -1,0 +1,45 @@
+Passes: 7
+N = 1024
+Event Trace
+(active_warps,38956) (gst_inst_32bit,1024) (gld_inst_32bit,2048) (warps_launched,32) (branch,64) (active_cycles,5009) ; 
+Metric Trace
+(flop_count_sp,2048) (inst_executed,608) (dram_read_transactions,0) (dram_write_transactions,12) (l2_read_transactions,672) (l2_write_transactions,205) (l2_tex_read_transactions,384) (l2_tex_write_transactions,192) ; 
+_Z5saxpyifPfS_
+Mininum time of execution: 0.016864
+Maximum Bandwidth: 0.728653
+
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc11>
+Subject: Job 53962: <./saxpy 10 10> in cluster <cluster_lsf_hbp> Done
+
+Job <./saxpy 10 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc11>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/include/cupti_profiler/examples> was used as the working directory.
+Started at Mon May 15 20:09:28 2017
+Results reported on Mon May 15 20:09:29 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./saxpy 10 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.40 sec.
+    Max Memory :                                 73 MB
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   1 sec.
+    Turnaround time :                            2 sec.
+
+The output (if any) is above this job summary.
+
