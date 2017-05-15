@@ -1,51 +1,43 @@
-Sender: LSF System <ibm003@juronc03>
-Subject: Job 8791: <./../bin/saxpy_many 14 10> in cluster <cluster_lsf_hbp> Done
+N = 16384
+Average time of execution: 0.052736
+Maximum time of execution: 0.342112
+Mininum time of execution: 0.004128
+Average Bandwidth: 20.196625
+Maximum Bandwidth: 47.627908
+Mininum Bandwidth: 0.574689
 
-Job <./../bin/saxpy_many 14 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
-Job was executed on host(s) <juronc03>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc06>
+Subject: Job 53855: <./../bin/saxpy_high 14 100> in cluster <cluster_lsf_hbp> Done
+
+Job <./../bin/saxpy_high 14 100> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc06>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
 </gpfs/homeb/zam/padc005> was used as the home directory.
 </gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
-Started at Tue Jan  3 09:39:24 2017
-Results reported on Tue Jan  3 09:39:29 2017
+Started at Mon May 15 12:08:08 2017
+Results reported on Mon May 15 12:08:13 2017
 
 Your job looked like:
 
 ------------------------------------------------------------
 # LSBATCH: User input
-./../bin/saxpy_many 14 10
+./../bin/saxpy_high 14 100
 ------------------------------------------------------------
 
 Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   0.17 sec.
-    Max Memory :                                 48 MB
+    CPU time :                                   0.47 sec.
+    Max Memory :                                 51 MB
     Average Memory :                             12.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              3
-    Max Threads :                                6
+    Max Threads :                                4
     Run time :                                   3 sec.
-    Turnaround time :                            6 sec.
+    Turnaround time :                            5 sec.
 
-The output (if any) follows:
+The output (if any) is above this job summary.
 
-N = 16384
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Max error: 0.000000
-Average time of execution: 0.021658
-Maximum time of execution: 0.051872
-Mininum time of execution: 0.004000
-Average Bandwidth: 17.415747
-Maximum Bandwidth: 49.151996
-Mininum Bandwidth: 3.790253

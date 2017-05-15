@@ -1,0 +1,86 @@
+N = 524288
+Average time of execution: 0.014672
+Maximum time of execution: 0.015232
+Mininum time of execution: 0.014304
+Average Bandwidth: 428.929706
+Maximum Bandwidth: 439.838912
+Mininum Bandwidth: 413.042016
+
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc12>
+Subject: Job 53685: <./../bin/saxpy_temp 19 10> in cluster <cluster_lsf_hbp> Done
+
+Job <./../bin/saxpy_temp 19 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc12>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
+Started at Fri May 12 14:57:56 2017
+Results reported on Fri May 12 14:57:56 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./../bin/saxpy_temp 19 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.34 sec.
+    Max Memory :                                 62 MB
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   0 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) is above this job summary.
+
+N = 524288
+Average time of execution: 0.008211
+Maximum time of execution: 0.008416
+Mininum time of execution: 0.007904
+Average Bandwidth: 766.454810
+Maximum Bandwidth: 795.983872
+Mininum Bandwidth: 747.558976
+
+------------------------------------------------------------
+Sender: LSF System <ibm003@juronc12>
+Subject: Job 53686: <./../bin/saxpy_temp 19 10> in cluster <cluster_lsf_hbp> Done
+
+Job <./../bin/saxpy_temp 19 10> was submitted from host <juronb1> by user <padc005> in cluster <cluster_lsf_hbp>.
+Job was executed on host(s) <juronc12>, in queue <normal>, as user <padc005> in cluster <cluster_lsf_hbp>.
+</gpfs/homeb/zam/padc005> was used as the home directory.
+</gpfs/homeb/zam/padc005/test/saxpy/SAXPY/src> was used as the working directory.
+Started at Fri May 12 14:58:54 2017
+Results reported on Fri May 12 14:58:55 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./../bin/saxpy_temp 19 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.33 sec.
+    Max Memory :                                 58 MB
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   0 sec.
+    Turnaround time :                            2 sec.
+
+The output (if any) is above this job summary.
+
